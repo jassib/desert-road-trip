@@ -61,7 +61,7 @@ if(window.L){
 const tripMap=L.map('map',{scrollWheelZoom:false}).setView([36.1,-119.0],6);
 window.tripMap=tripMap;
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap'}).addTo(tripMap);
-const pts={'Santa Clara':[37.3541,-121.9552],'Santa Nella':[37.099,-121.017],'Buttonwillow':[35.4,-119.47],'Barstow':[34.8958,-117.0173],'Baker':[35.2655,-116.074],'Shoshone':[35.9758,-116.275],'Stovepipe Wells':[36.6066,-117.1478],'29 Palms RV Resort':[34.1658,-116.0559],'Paso Robles':[35.6269,-120.691],'Cambria':[35.5641,-121.0807],'Morro Bay':[35.3658,-120.8499],'Atascadero':[35.4894,-120.6707]};
+const pts={'Santa Clara':[37.3541,-121.9552],'Santa Nella':[37.099,-121.017],'Buttonwillow':[35.4,-119.47],'Barstow':[34.8958,-117.0173],'Baker':[35.2655,-116.074],'Shoshone':[35.9758,-116.275],'Stovepipe Wells':[36.6066,-117.1478],'29 Palms RV Resort':[34.165843,-116.045278],'Paso Robles':[35.6269,-120.691],'Cambria':[35.5641,-121.0807],'Morro Bay':[35.3658,-120.8499],'Atascadero':[35.4894,-120.6707]};
 const keyStops=[['1 · Start','Santa Clara'],['2 · Stay Nov 25–26','Stovepipe Wells'],['3 · Stay Nov 27–28','29 Palms RV Resort'],['4 · Cambria','Cambria'],['5 · Morro Bay','Morro Bay'],['6 · Finish','Santa Clara']];
 keyStops.forEach(([label,name],idx)=>{const ll=pts[name];L.marker(ll,{icon:L.divIcon({className:'',html:'<span class="map-number">'+(idx+1)+'</span>',iconSize:[29,29],iconAnchor:[14,14]})}).addTo(tripMap).bindPopup('<b>'+label+'</b><br>'+name)});
 L.control.scale().addTo(tripMap);

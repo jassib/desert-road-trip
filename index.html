@@ -9,6 +9,7 @@
 :root{--ink:#20251f;--muted:#687064;--paper:#f7f5ef;--card:#fffefa;--sand:#e8ddc9;--rust:#a34f32;--sage:#64765d;--line:#e6e1d7}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}header{background:#26352c;color:#f8f5ed;padding:42px 22px 28px}.wrap{max-width:1050px;margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:#d9c6a7;font-weight:700}.hero h1{font:clamp(2.2rem,6vw,4.2rem)/1.02 Georgia,serif;margin:12px 0}.hero p{max-width:650px;color:#e2e2d8;margin:14px 0 0}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.pill{border:1px solid #ffffff50;border-radius:30px;padding:6px 12px;font-size:.85rem}.tabs{display:flex;gap:8px;padding:16px 0;position:sticky;top:0;background:var(--paper);z-index:500}.tab{border:1px solid var(--line);background:var(--card);border-radius:30px;padding:10px 20px;font-weight:700;color:var(--muted);cursor:pointer}.tab.active{background:var(--rust);border-color:var(--rust);color:white}main{padding:0 22px 60px}.panel{display:none}.panel.active{display:block}.intro{color:var(--muted);margin:8px 0 18px}.section-title{font:2rem/1.1 Georgia,serif;margin:34px 0 12px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin:14px 0;box-shadow:0 4px 18px #33281708}.notice{border-left:4px solid var(--rust);background:#f1e9dc;padding:14px 16px;border-radius:8px;margin:16px 0}.notice strong{display:block}.mapbox{border-radius:16px;overflow:hidden;border:1px solid var(--line)}#map{height:420px;background:#e9e5dc}.route-legend{display:flex;flex-wrap:wrap;gap:10px 18px;margin:12px 2px 4px;font-size:.84rem;color:var(--muted)}.route-legend span{display:flex;align-items:center;gap:7px}.route-legend i{display:inline-block;width:24px;height:4px;border-radius:4px;flex:none}.caption{font-size:.82rem;color:var(--muted);margin:8px 2px 0}.day{display:grid;grid-template-columns:110px 1fr;gap:18px}.date{color:var(--rust);font-weight:800;font-size:.88rem}.day h3{font:1.45rem Georgia,serif;margin:0 0 6px}.day p{margin:5px 0}.tag{display:inline-block;background:#e9eee5;color:#465a40;border-radius:20px;padding:3px 9px;font-size:.76rem;font-weight:700;margin:4px 5px 0 0}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}a{color:#8e442d;font-weight:650}.buttonlink{display:inline-block;background:#26352c;color:white;text-decoration:none;padding:9px 13px;border-radius:24px;font-size:.86rem}.muted{color:var(--muted)}ul{padding-left:20px;margin:8px 0}.daylist .card{padding:18px 20px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.checkgroup h3{font:1.25rem Georgia,serif;margin:0 0 12px}.check{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid #f0ede6}.check:last-child{border:0}.check input{accent-color:var(--sage);margin-top:5px;width:17px;height:17px;flex-shrink:0}.check input:checked+span{text-decoration:line-through;color:#8b9086}.progress{height:7px;background:#e8e5dc;border-radius:8px;overflow:hidden;margin:10px 0 3px}.progress>span{display:block;height:100%;background:var(--sage);width:0}.personhead{display:flex;justify-content:space-between;align-items:center;gap:12px}.personhead h3{margin:0}.smallbtn{border:1px solid var(--line);background:white;border-radius:20px;padding:7px 12px;cursor:pointer}.foot{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;color:var(--muted);font-size:.85rem}@media(max-width:650px){.grid{grid-template-columns:1fr}.day{grid-template-columns:1fr;gap:4px}#map{height:300px}.card{padding:16px}}
 .explore-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 14px;list-style:none;padding:0;margin:12px 0}.explore-list li{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#faf8f2}.explore-list a{display:inline-block}.explore-list small{display:block;color:var(--muted);line-height:1.35;margin-top:3px}.explore-heading{font-weight:800;margin-top:16px}.explore-note{font-size:.84rem;color:var(--muted)}@media(max-width:650px){.explore-list{grid-template-columns:1fr}}
 .map-number{display:inline-flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:50%;background:#26352c;color:white;border:2px solid white;box-shadow:0 2px 5px #0005;font-weight:800;font-size:13px}.weather-card h3{font:1.2rem Georgia,serif;margin:0 0 5px}.weather-card .temp{font-size:1.6rem;font-weight:800}.weather-card p{margin:5px 0}.weather-card .forecast{border-top:1px solid var(--line);margin-top:10px;padding-top:8px;font-size:.88rem}
+.route-choice{border:1px solid var(--line);background:var(--card);padding:9px 12px;border-radius:22px;cursor:pointer;color:var(--ink);font-weight:700}.route-choice.active{background:#26352c;color:white;border-color:#26352c}.route-legend{gap:8px}
 </style>
 </head>
 <body>
@@ -16,7 +17,7 @@
 <main class="wrap"><nav class="tabs" aria-label="Sections"><button class="tab active" data-tab="journey">Journey</button><button class="tab" data-tab="packing">Packing</button></nav>
 <section id="journey" class="panel active"><p class="intro">Death Valley National Park · Stovepipe Wells RV Park (Nov 25–26) → Joshua Tree National Park · 29 Palms RV Resort (Nov 27–28).</p>
 <div class="notice"><strong>Big RV note · approx. 30 ft long / 12 ft high</strong>Use paved, RV-suitable roads only. Google Maps links are car directions, not RV-certified navigation. Check road conditions, height/length restrictions and rental-company rules before departure.</div>
-<h2 class="section-title">The route</h2><div class="mapbox"><div id="map" aria-label="Overview map of the road trip"></div></div><div id="route-legend" class="route-legend"><span><i style="background:#8a8a82"></i><b>1 · Nov 25</b> Santa Clara → Death Valley NP (Stovepipe Wells RV Park)</span><span><i style="background:#a34f32"></i><b>2 · Nov 27</b> Death Valley NP → Joshua Tree NP (29 Palms RV Resort)</span><span><i style="background:#4c708d"></i><b>3 · Nov 29</b> 29 Palms RV Resort → Cambria → Morro Bay → Santa Clara</span></div><p class="caption">Lines are drawn in trip order from road-routing data; each color is a separate travel day. Routing is not RV-certified or live traffic. Confirm the route before driving.</p>
+<h2 class="section-title">The route</h2><div class="mapbox"><div id="map" aria-label="Overview map of the road trip"></div></div><div class="route-legend" id="route-legend" role="group" aria-label="Select travel-day route"><button class="route-choice active" data-route="0" type="button">Nov 25 · Death Valley</button><button class="route-choice" data-route="1" type="button">Nov 27 · Joshua Tree</button><button class="route-choice" data-route="2" type="button">Nov 29 · Central Coast</button></div><p class="caption" id="route-status">Select a day to view its route. Road lines are not RV-certified.</p>
 <div class="card"><strong>Trip at a glance</strong><p>Santa Clara → Death Valley National Park (Stovepipe Wells RV Park, 2 nights) → Joshua Tree National Park (29 Palms RV Resort, 2 nights) → Central Coast via Cambria and Morro Bay → Santa Clara</p></div>
 <h2 class="section-title">Live weather & road checks</h2><p class="intro">Forecast for each overnight and the Nov 29 coastal return. Road closures: use official live links.</p><div class="grid" id="weather-cards"><div class="card">Loading forecasts…</div></div><div class="actions"><button class="smallbtn" id="refresh-weather" type="button">↻ Refresh weather</button></div><p class="caption" id="weather-status">Forecast source: Open-Meteo. Forecast dates beyond its 16-day horizon are not available.</p>
 <div class="card"><b>Current road conditions — official live sources</b><ul><li><a target="_blank" rel="noopener" href="https://quickmap.dot.ca.gov/">Caltrans QuickMap</a> — highway closures, incidents, traffic and wind advisories; inspect CA-58, CA-127, CA-190, CA-62, CA-46, CA-1 and US-101</li><li><a target="_blank" rel="noopener" href="https://roads.dot.ca.gov/">Caltrans Highway Conditions</a> — enter highway numbers</li><li><a target="_blank" rel="noopener" href="https://www.nps.gov/deva/planyourvisit/conditions.htm">Death Valley NPS road-status map</a> — park road closures and debris alerts</li><li><a target="_blank" rel="noopener" href="https://www.nps.gov/jotr/planyourvisit/conditions.htm">Joshua Tree NPS alerts</a> — current park closures</li></ul><p class="caption">These are live external pages, not embedded closure-status data. Check again immediately before each drive.</p></div>
@@ -92,12 +93,57 @@ const tripMap=L.map('map',{scrollWheelZoom:false}).setView([36.1,-119.0],6);
 window.tripMap=tripMap;
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap'}).addTo(tripMap);
 const pts={'Santa Clara':[37.3541,-121.9552],'Santa Nella':[37.099,-121.017],'Buttonwillow':[35.4,-119.47],'Barstow':[34.8958,-117.0173],'Baker':[35.2655,-116.074],'Shoshone':[35.9758,-116.275],'Stovepipe Wells':[36.6066,-117.1478],'29 Palms RV Resort':[34.165843,-116.045278],'Paso Robles':[35.6269,-120.691],'Cambria':[35.5641,-121.0807],'Morro Bay':[35.3658,-120.8499],'Atascadero':[35.4894,-120.6707]};
-const keyStops=[['1 · Start','Santa Clara'],['2 · Stay Nov 25–26','Stovepipe Wells'],['3 · Stay Nov 27–28','29 Palms RV Resort'],['4 · Cambria','Cambria'],['5 · Morro Bay','Morro Bay'],['6 · Finish','Santa Clara']];
-keyStops.forEach(([label,name],idx)=>{const ll=pts[name];L.marker(ll,{icon:L.divIcon({className:'',html:'<span class="map-number">'+(idx+1)+'</span>',iconSize:[29,29],iconAnchor:[14,14]})}).addTo(tripMap).bindPopup('<b>'+label+'</b><br>'+name)});
-L.control.scale().addTo(tripMap);
-const bounds=L.latLngBounds(Object.values(pts));tripMap.fitBounds(bounds.pad(.08));
-async function drawRoadRoute(names,color){const coords=names.map(n=>pts[n].slice().reverse().join(',')).join(';');const url='https://router.project-osrm.org/route/v1/driving/'+coords+'?overview=full&geometries=geojson&steps=false';const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),9000);let res;try{res=await fetch(url,{signal:controller.signal});}finally{clearTimeout(timeout);}if(!res.ok)throw new Error('Routing service unavailable');const data=await res.json();if(data.code!=='Ok'||!data.routes?.[0])throw new Error('No road route returned');const latlngs=data.routes[0].geometry.coordinates.map(([lon,lat])=>[lat,lon]);L.polyline(latlngs,{color,weight:5,opacity:.85}).addTo(tripMap).bindPopup(names.join(' → '));latlngs.forEach(p=>bounds.extend(p));}
-(async()=>{const results=await Promise.allSettled([drawRoadRoute(['Santa Clara','Santa Nella','Buttonwillow','Barstow','Baker','Shoshone','Stovepipe Wells'],'#8a8a82'),drawRoadRoute(['Stovepipe Wells','Shoshone','Baker','Barstow','29 Palms RV Resort'],'#a34f32'),drawRoadRoute(['29 Palms RV Resort','Barstow','Paso Robles','Cambria','Morro Bay','Atascadero','Santa Clara'],'#4c708d')]);if(bounds.isValid())tripMap.fitBounds(bounds.pad(.06));if(results.some(x=>x.status==='rejected')){const note=document.createElement('p');note.className='caption';note.textContent='Road routing service unavailable for some segments. Map markers and Google Maps driving links still work.';document.getElementById('route-legend').after(note);}})();
+const routes=[
+ {label:'Nov 25 · Santa Clara → Death Valley National Park (Stovepipe Wells RV Park)',names:['Santa Clara','Santa Nella','Buttonwillow','Barstow','Baker','Shoshone','Stovepipe Wells'],color:'#8a8a82',markers:[['Santa Clara','Start'],['Stovepipe Wells','Stovepipe Wells RV Park']]},
+ {label:'Nov 27 · Death Valley National Park → Joshua Tree National Park (29 Palms RV Resort)',names:['Stovepipe Wells','Shoshone','Baker','Barstow','29 Palms RV Resort'],color:'#a34f32',markers:[['Stovepipe Wells','Stovepipe Wells RV Park'],['29 Palms RV Resort','29 Palms RV Resort']]},
+ {label:'Nov 29 · Joshua Tree National Park → Cambria → Morro Bay → Santa Clara',names:['29 Palms RV Resort','Barstow','Paso Robles','Cambria','Morro Bay','Atascadero','Santa Clara'],color:'#4c708d',markers:[['29 Palms RV Resort','29 Palms RV Resort'],['Cambria','Cambria'],['Morro Bay','Morro Bay'],['Santa Clara','Finish']]}
+];
+const routeLayer=L.layerGroup().addTo(tripMap);
+const status=document.getElementById('route-status');
+const buttons=[...document.querySelectorAll('.route-choice')];
+const routeCache=new Map();
+let selection=0;
+function routeFallback(route){return route.names.map(name=>pts[name]);}
+async function fetchRoute(route){
+ if(routeCache.has(route.label))return routeCache.get(route.label);
+ const coords=route.names.map(n=>pts[n].slice().reverse().join(',')).join(';');
+ const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),9000);
+ try{
+  const res=await fetch('https://router.project-osrm.org/route/v1/driving/'+coords+'?overview=full&geometries=geojson&steps=false',{signal:controller.signal});
+  if(!res.ok)throw Error('Route unavailable');
+  const data=await res.json();
+  if(data.code!=='Ok'||!data.routes?.[0])throw Error('Route unavailable');
+  const line=data.routes[0].geometry.coordinates.map(([lon,lat])=>[lat,lon]);
+  routeCache.set(route.label,line);return line;
+ }finally{clearTimeout(timer);}
+}
+async function selectRoute(index){
+ selection=index;
+ buttons.forEach((button,i)=>{button.classList.toggle('active',i===index);button.setAttribute('aria-pressed',String(i===index));});
+ routeLayer.clearLayers();
+ const route=routes[index];
+ const markerBounds=L.latLngBounds([]);
+ route.markers.forEach(([name,caption],i)=>{
+  const pos=pts[name];markerBounds.extend(pos);
+  L.marker(pos,{icon:L.divIcon({className:'',html:'<span class="map-number">'+(i+1)+'</span>',iconSize:[29,29],iconAnchor:[14,14]})}).addTo(routeLayer).bindPopup(caption);
+ });
+ const fallback=routeFallback(route);
+ const provisional=L.polyline(fallback,{color:route.color,weight:4,opacity:.55,dashArray:'8 8'}).addTo(routeLayer);
+ tripMap.fitBounds(L.latLngBounds(fallback).pad(.1));
+ status.textContent=route.label+' · Loading road route…';
+ try{
+  const geometry=await fetchRoute(route);
+  if(selection!==index)return;
+  routeLayer.removeLayer(provisional);
+  L.polyline(geometry,{color:route.color,weight:5,opacity:.95}).addTo(routeLayer).bindPopup(route.label);
+  tripMap.fitBounds(L.latLngBounds(geometry).pad(.08));
+  status.textContent=route.label+' · Road route (not RV-certified)';
+ }catch(e){
+  if(selection===index)status.textContent=route.label+' · Dashed line shows stops only; road-routing service unavailable. Use Google Maps links below.';
+ }
+}
+buttons.forEach((button,i)=>button.addEventListener('click',()=>selectRoute(i)));
+selectRoute(0);
 }
 else {document.getElementById('map').textContent='Interactive map unavailable. Use the Google Maps route links below.';}
 </script></body></html>
